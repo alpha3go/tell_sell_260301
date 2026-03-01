@@ -47,14 +47,14 @@ export default function VoiceControls({ onInterim, onNewMessage, triggerAIRespon
     };
 
     return (
-        <div className="flex flex-col items-center justify-center p-8 sm:p-12 neo-card bg-zinc-50 dark:bg-zinc-800 border-4">
+        <div className="flex flex-col items-center justify-center p-4 sm:p-12 neo-card bg-zinc-50 dark:bg-zinc-800 border-4 w-full">
             <button
                 onClick={toggleMic}
-                className={`w-40 h-40 sm:w-48 sm:h-48 rounded-full border-4 border-black dark:border-white shadow-[6px_6px_0_#000] dark:shadow-[6px_6px_0_#fff] flex items-center justify-center text-6xl sm:text-7xl transition-all ${getStateStyles()} active:translate-y-2 active:translate-x-2 active:shadow-none`}
+                className={`w-32 h-32 sm:w-48 sm:h-48 rounded-full border-4 border-black dark:border-white shadow-[4px_4px_0_#000] sm:shadow-[6px_6px_0_#000] dark:shadow-[4px_4px_0_#fff] sm:dark:shadow-[6px_6px_0_#fff] flex items-center justify-center text-5xl sm:text-7xl transition-all ${getStateStyles()} active:translate-y-2 active:translate-x-2 active:shadow-none`}
             >
                 {isListening ? "🔴" : "🎤"}
             </button>
-            <p className="mt-8 font-black text-2xl sm:text-3xl bg-white dark:bg-black px-6 py-3 border-4 border-black dark:border-white text-center break-keep w-full">
+            <p className="mt-6 sm:mt-8 font-black text-lg sm:text-3xl bg-white dark:bg-black px-4 py-2 sm:px-6 sm:py-3 border-4 border-black dark:border-white text-center break-keep w-full">
                 {getStateText()}
             </p>
         </div>

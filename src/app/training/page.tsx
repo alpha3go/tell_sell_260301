@@ -80,23 +80,23 @@ export default function TrainingPage() {
 
     return (
         <div className="flex min-h-screen flex-col items-center bg-zinc-50 dark:bg-black font-sans p-6 sm:p-12 transition-all">
-            <div className="w-full max-w-4xl flex justify-between items-center mb-10 gap-4">
-                <h1 className="text-3xl sm:text-5xl font-black bg-neo-yellow text-black neo-border px-6 py-3 border-4 rotate-1 shadow-[6px_6px_0_#000]">
-                    🏆 텔 앤 셀 트레이닝 <span className="text-xl">[{step}/5 단계]</span>
+            <div className="w-full max-w-4xl flex flex-col sm:flex-row justify-between items-center mb-6 gap-4">
+                <h1 className="text-2xl sm:text-4xl md:text-5xl font-black bg-neo-yellow text-black neo-border px-4 py-2 sm:px-6 sm:py-3 border-4 -rotate-1 sm:rotate-1 shadow-[4px_4px_0_#000] sm:shadow-[6px_6px_0_#000] text-center">
+                    🏆 텔 앤 셀 트레이닝 <span className="block sm:inline text-lg sm:text-xl mt-1 sm:mt-0">[{step}/5 단계]</span>
                 </h1>
                 <a href="/" className="neo-btn bg-white text-black px-6 py-3 text-lg font-bold border-4">
                     ← 종료하기
                 </a>
             </div>
 
-            <div className="w-full max-w-4xl neo-card p-8 bg-white dark:bg-zinc-900 border-4 relative overflow-hidden transition-all duration-300 min-h-[600px] flex flex-col justify-between">
+            <div className="w-full max-w-4xl neo-card p-4 sm:p-8 bg-white dark:bg-zinc-900 border-4 relative overflow-hidden transition-all duration-300 min-h-[500px] sm:min-h-[600px] flex flex-col justify-between">
                 <div>
                     {/* Step 1: Mindset */}
                     {step === 1 && (
-                        <div className="flex flex-col gap-6 animate-fade-in pb-8">
-                            <div className="bg-neo-blue text-white px-4 py-2 border-4 text-2xl font-bold w-max shadow-[4px_4px_0_#000]">1단계: 영업 마인드 세팅</div>
-                            <h2 className="text-3xl md:text-4xl font-black mb-2 leading-tight bg-neo-yellow inline-block max-w-max px-2">"우리는 파는 사람이 아니라<br />가치를 전하는 사람입니다."</h2>
-                            <p className="text-xl mb-4 text-zinc-700 dark:text-zinc-300 font-medium">영업을 시작하기 전, 스스로 장착해야 할 4가지 마인드셋입니다.</p>
+                        <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in pb-8">
+                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">1단계: 영업 마인드 세팅</div>
+                            <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-1 sm:mb-2 leading-tight bg-neo-yellow inline-block max-w-[100%] break-keep px-2">"우리는 파는 사람이 아니라 가치를 전하는 사람입니다."</h2>
+                            <p className="text-base sm:text-xl mb-2 sm:mb-4 text-zinc-700 dark:text-zinc-300 font-medium">영업을 시작하기 전, 스스로 장착해야 할 4가지 마인드셋입니다.</p>
 
                             <div className="grid gap-6 mt-2">
                                 <div className="p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
@@ -136,12 +136,12 @@ export default function TrainingPage() {
 
                     {/* Step 2: Strategy (SPIN & Psychology) */}
                     {step === 2 && (
-                        <div className="flex flex-col gap-8 animate-fade-in overflow-y-auto max-h-[70vh] pb-8 pr-4">
-                            <div className="bg-neo-blue text-white px-4 py-2 border-4 text-2xl font-bold w-max shadow-[4px_4px_0_#000]">2단계: 말하기 전략 익히기</div>
-                            <p className="text-xl text-zinc-700 dark:text-zinc-300 font-medium">영업 고수들이 무의식적으로 사용하는 질문의 기술과 심리적 무기 6가지를 배워보세요.</p>
+                        <div className="flex flex-col gap-6 sm:gap-8 animate-fade-in overflow-y-auto max-h-[65vh] pb-8 pr-2 sm:pr-4">
+                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">2단계: 말하기 전략 익히기</div>
+                            <p className="text-base sm:text-xl text-zinc-700 dark:text-zinc-300 font-medium break-keep">영업 고수들이 무의식적으로 사용하는 질문의 기술과 심리적 무기 6가지를 배워보세요.</p>
 
-                            <div className="bg-zinc-100 border-4 p-5">
-                                <h2 className="text-3xl font-black mb-4 bg-neo-yellow inline-block px-2">세일즈 필수 4단계 공식 (SPIN 전략)</h2>
+                            <div className="bg-zinc-100 border-4 p-3 sm:p-5">
+                                <h2 className="text-xl sm:text-3xl font-black mb-2 sm:mb-4 bg-neo-yellow inline-block px-2 break-keep">세일즈 필수 4단계 공식 (SPIN 전략)</h2>
                                 <p className="mb-4 text-lg">고객이 스스로 문제와 이득을 깨닫도록 가이드를 제시하는 전략입니다.</p>
 
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -187,9 +187,9 @@ export default function TrainingPage() {
                                 </div>
                             </div>
 
-                            <div className="mt-4">
-                                <h2 className="text-3xl font-black mb-4 bg-neo-yellow inline-block px-2">설득의 심리학 6가지 무기</h2>
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div className="mt-2 sm:mt-4">
+                                <h2 className="text-xl sm:text-3xl font-black mb-2 sm:mb-4 bg-neo-yellow inline-block px-2 break-keep">설득의 심리학 6가지 무기</h2>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                                     <div className="p-4 border-4 bg-white">
                                         <h3 className="font-bold text-xl mb-1 mt-1">🎁 상호성의 법칙 (주면 받는다)</h3>
                                         <p className="text-zinc-600 mb-2">사람은 호의를 받으면 보답하려 합니다.</p>
@@ -223,7 +223,7 @@ export default function TrainingPage() {
                                 </div>
                             </div>
 
-                            <div className="bg-neo-pink border-4 p-5 shadow-[6px_6px_0_#000] text-xl font-bold leading-relaxed text-white">
+                            <div className="bg-neo-pink border-4 p-4 sm:p-5 shadow-[4px_4px_0_#000] sm:shadow-[6px_6px_0_#000] text-base sm:text-xl font-bold leading-relaxed text-white break-keep mt-4">
                                 💡 실전 요약: 문제 제기(공포) → 해결책 제시(기대) → 증명(후기) → 앵커링(타사 대비 가성비) → 미끼 상품(쉬운 승낙) 순으로 실전에 적용해보세요!
                             </div>
                         </div>
@@ -231,9 +231,9 @@ export default function TrainingPage() {
 
                     {/* Step 3: Persona Selection */}
                     {step === 3 && (
-                        <div className="flex flex-col gap-6 animate-fade-in">
-                            <div className="bg-neo-blue text-white px-4 py-2 border-4 text-2xl font-bold w-max shadow-[4px_4px_0_#000]">3단계: 연습 상대방 설정하기</div>
-                            <p className="text-xl">오늘 상대해 볼 고객의 관계와 성격을 선택해주세요.</p>
+                        <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in">
+                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">3단계: 연습 상대방 설정하기</div>
+                            <p className="text-base sm:text-xl break-keep">오늘 상대해 볼 고객의 관계와 성격을 선택해주세요.</p>
 
                             <div className="flex flex-col gap-8 mt-2">
                                 <div>
@@ -269,15 +269,15 @@ export default function TrainingPage() {
 
                     {/* Step 4: AI Voice Chat */}
                     {step === 4 && (
-                        <div className="flex flex-col lg:flex-row gap-6 animate-fade-in w-full h-full">
+                        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 animate-fade-in w-full h-full">
                             <div className="flex-1 w-full flex flex-col items-center">
-                                <div className="bg-neo-blue text-white px-4 py-2 border-4 text-2xl font-bold shadow-[4px_4px_0_#000] w-full mb-6">4단계: 실전 대화 연습</div>
+                                <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000] w-full mb-4 sm:mb-6">4단계: 실전 대화 연습</div>
                                 <VoiceControls
                                     onInterim={setInterim}
                                     onNewMessage={(text) => sendMessage(text)}
                                     triggerAIResponse={() => { }} // Now handled by AI SDK automatically via sendMessage()
                                 />
-                                {status === 'streaming' && <p className="mt-4 font-bold text-neo-pink text-xl animate-pulse">AI가 응답을 준비하고 있습니다...</p>}
+                                {status === 'streaming' && <p className="mt-4 font-bold text-neo-pink text-sm sm:text-xl animate-pulse">AI가 응답을 준비하고 있습니다...</p>}
                             </div>
                             <div className="flex-1 w-full">
                                 <ChatInterface messages={chatMessages} interimTranscript={interim} />
@@ -287,18 +287,18 @@ export default function TrainingPage() {
 
                     {/* Step 5: Feedback */}
                     {step === 5 && (
-                        <div className="flex flex-col gap-6 animate-fade-in h-full">
-                            <div className="bg-neo-blue text-white px-4 py-2 border-4 text-2xl font-bold w-max shadow-[4px_4px_0_#000]">5단계: 훈련 피드백</div>
-                            <p className="text-xl">수고하셨습니다! 방금 진행한 대화에 대한 피드백입니다.</p>
+                        <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in h-full">
+                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">5단계: 훈련 피드백</div>
+                            <p className="text-base sm:text-xl break-keep">수고하셨습니다! 방금 진행한 대화에 대한 피드백입니다.</p>
                             <FeedbackPanel />
                         </div>
                     )}
                 </div>
 
                 {/* Wizard Navigation Controls */}
-                <div className="mt-12 flex justify-between border-t-4 pt-6">
+                <div className="mt-8 sm:mt-12 flex justify-between border-t-4 pt-4 sm:pt-6 gap-2">
                     {step > 1 ? (
-                        <button onClick={prevStep} className="neo-btn bg-white text-black px-6 py-3 font-bold text-xl border-4">
+                        <button onClick={prevStep} className="neo-btn bg-white text-black px-4 py-2 sm:px-6 sm:py-3 font-bold text-sm sm:text-xl border-4">
                             이전 단계
                         </button>
                     ) : (
@@ -306,12 +306,12 @@ export default function TrainingPage() {
                     )}
 
                     {step < 5 ? (
-                        <button onClick={nextStep} className="neo-btn bg-black text-white px-8 py-3 font-bold text-2xl border-4 shadow-[4px_4px_0_#neo-yellow] hover:shadow-[2px_2px_0_#neo-yellow] active:shadow-none hover:bg-zinc-800">
+                        <button onClick={nextStep} className="neo-btn bg-black text-white px-4 py-2 sm:px-8 sm:py-3 font-bold text-lg sm:text-2xl border-4 shadow-[3px_3px_0_#neo-yellow] hover:shadow-[1px_1px_0_#neo-yellow] sm:shadow-[4px_4px_0_#neo-yellow] sm:hover:shadow-[2px_2px_0_#neo-yellow] active:shadow-none hover:bg-zinc-800 focus:outline-none">
                             다음 단계 →
                         </button>
                     ) : (
-                        <button onClick={() => { setStep(1); /* Reset messages if needed, useChat handles its own state */ }} className="neo-btn bg-neo-pink text-black px-8 py-3 font-bold text-2xl border-4 shadow-[4px_4px_0_#000] hover:shadow-[2px_2px_0_#000] active:shadow-none">
-                            다시 훈련하기 🔄
+                        <button onClick={() => { setStep(1); /* Reset messages if needed, useChat handles its own state */ }} className="neo-btn bg-neo-pink text-black px-4 py-2 sm:px-8 sm:py-3 font-bold text-lg sm:text-2xl border-4 shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000] hover:shadow-[2px_2px_0_#000] active:shadow-none break-keep flex flex-col sm:flex-row items-center justify-center">
+                            <span>다시 훈련하기</span><span className="ml-1">🔄</span>
                         </button>
                     )}
                 </div>
