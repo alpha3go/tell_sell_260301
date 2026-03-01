@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fdfaf6;
+  --foreground: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --color-neo-yellow: #ffe600;
+  --color-neo-pink: #ff90e8;
+  --color-neo-blue: #23a094;
+  --color-neo-orange: #f95e3c;
+  --color-neo-bg: #fdfaf6;
+
+  --shadow-neo: 4px 4px 0px 0px rgba(0, 0, 0, 1);
+  --shadow-neo-sm: 2px 2px 0px 0px rgba(0, 0, 0, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --foreground: #fdfaf6;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  border-color: #000000;
+}
+
+@utility neo-border {
+  @apply border-2 border-black dark:border-white;
+}
+
+@utility neo-border-thick {
+  @apply border-4 border-black dark:border-white;
+}
+
+@utility neo-shadow {
+  @apply shadow-[4px_4px_0_#000] dark:shadow-[4px_4px_0_#fff];
+}
+
+@utility neo-shadow-sm {
+  @apply shadow-[2px_2px_0_#000] dark:shadow-[2px_2px_0_#fff];
+}
+
+@utility neo-btn {
+  @apply border-2 border-black dark:border-white shadow-[4px_4px_0_#000] dark:shadow-[4px_4px_0_#fff] font-bold transition-all hover:-translate-y-1 hover:translate-x-[-2px] hover:shadow-[6px_6px_0_#000] active:translate-y-1 active:translate-x-1 active:shadow-none dark:hover:shadow-[6px_6px_0_#fff];
+}
+
+@utility neo-card {
+  @apply border-2 border-black dark:border-white shadow-[4px_4px_0_#000] dark:shadow-[4px_4px_0_#fff] bg-white dark:bg-zinc-900;
+}
