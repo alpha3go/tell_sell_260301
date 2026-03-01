@@ -1,6 +1,9 @@
 import { openai } from '@ai-sdk/openai';
 import { streamText } from 'ai';
 
+// Configure this route to run on the Edge Runtime for Cloudflare Pages
+export const runtime = 'edge';
+
 // Allow streaming responses up to 30 seconds
 export const maxDuration = 30;
 
