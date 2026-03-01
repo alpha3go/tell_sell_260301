@@ -91,140 +91,150 @@ export default function TrainingPage() {
 
             <div className="w-full max-w-4xl neo-card p-4 sm:p-8 bg-white dark:bg-zinc-900 border-4 relative overflow-hidden transition-all duration-300 min-h-[500px] sm:min-h-[600px] flex flex-col justify-between">
                 <div>
-                    {/* Step 1: Mindset */}
+                    {/* Step 1: Psychology & Behavioral Economics */}
                     {step === 1 && (
                         <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in pb-8">
-                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">1단계: 영업 마인드 세팅</div>
-                            <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-1 sm:mb-2 leading-tight bg-neo-yellow inline-block max-w-[100%] break-keep px-2">"우리는 파는 사람이 아니라 가치를 전하는 사람입니다."</h2>
-                            <p className="text-base sm:text-xl mb-2 sm:mb-4 text-zinc-700 dark:text-zinc-300 font-medium">영업을 시작하기 전, 스스로 장착해야 할 4가지 마인드셋입니다.</p>
+                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">1단계: 고객의 마음을 여는 4가지 마음의 법칙 & 실수 활용법</div>
+                            <h2 className="text-xl sm:text-2xl md:text-4xl font-black mb-1 sm:mb-2 leading-tight bg-neo-yellow inline-block max-w-[100%] break-keep px-2">"사람은 누구나 마음의 지름길을 사용해 결정을 내립니다."</h2>
+                            <p className="text-base sm:text-xl mb-2 sm:mb-4 text-zinc-700 dark:text-zinc-300 font-medium break-keep">이 지름길을 알면 거절당할 두려움이 줄고, 자연스럽게 '네'라는 답을 듣게 됩니다.</p>
 
-                            <div className="grid gap-6 mt-2">
-                                <div className="p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                    <h3 className="font-bold text-2xl text-neo-blue mb-2">💎 물건이 아닌 '가치'를 제공합니다</h3>
-                                    <p className="text-lg mb-3">고객이 지불하는 돈보다 <span className="font-bold underline decoration-neo-pink decoration-4">더 큰 가치(건강, 미용, 경제적 이득)</span>를 돌려주는 일입니다.</p>
-                                    <div className="bg-zinc-100 p-4 border-l-4 border-neo-blue">
-                                        <p className="font-bold text-neo-pink">💡 예시 상황</p>
-                                        <p>단순히 화장품 하나를 파는 것이 아니라, "고객님의 푸석했던 피부를 생기 있게 만들어 잃어버린 자신감을 되찾아주는 일"이라고 생각하세요.</p>
+                            {/* Part 1 */}
+                            <h3 className="text-2xl sm:text-3xl font-black mt-4 bg-black text-white px-4 py-2 inline-block shadow-[4px_4px_0_#neo-yellow]">💡 설득 심리학 4가지 법칙</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-2">
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-neo-blue mb-2">🎁 보답의 법칙 (호혜성)</h4>
+                                    <p className="text-base sm:text-lg mb-3">사람은 받은 호의를 돌려주고 싶어합니다.</p>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-neo-blue">
+                                        <p className="font-bold text-neo-pink">👉 애터미 실전 적용</p>
+                                        <p className="text-sm sm:text-base mt-1">건강에 좋은 간단한 정보나 작은 샘플을 드립니다. "가입비/유지비가 없는 것" 자체가 큰 호의이며, 고객님은 고마워서 다시 사게 됩니다.</p>
                                     </div>
                                 </div>
 
-                                <div className="p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                    <h3 className="font-bold text-2xl text-neo-blue mb-2">⏳ 시간과 노력(비용)의 절약</h3>
-                                    <p className="text-lg mb-3">어차피 평생 써야 하는 생필품! 마트에서 고민하는 시간, 잘못된 제품을 사서 버리는 돈을 아껴주는 <span className="font-bold underline decoration-neo-pink decoration-4">합리적인 큐레이터</span>가 되어주세요.</p>
-                                    <div className="bg-zinc-100 p-4 border-l-4 border-neo-blue">
-                                        <p className="font-bold text-neo-pink">💡 예시 상황</p>
-                                        <p>"마트 가서 샴푸 어떤 거 살지 한참 고민하시죠? 게다가 비싸기만 하고 머릿결도 안 좋아지고요. 제가 딱 맞는 절대품질, 절대가격 제품으로 추천해 드릴 테니 시간 낭비, 돈 낭비 하지 마세요."</p>
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-neo-blue mb-2">👥 주변 따라하기 (사회적 증거)</h4>
+                                    <p className="text-base sm:text-lg mb-3">불확실할 땐 많은 사람이 가는 쪽을 따릅니다.</p>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-neo-blue">
+                                        <p className="font-bold text-neo-pink">👉 애터미 실전 적용</p>
+                                        <p className="text-sm sm:text-base mt-1">석세스 아카데미나 세미나에 함께 가보자고 초대합니다. 수천 명이 박수 치는 모습을 보면 "이 길이 안전하구나" 하고 마음이 움직입니다.</p>
                                     </div>
                                 </div>
 
-                                <div className="p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                    <h3 className="font-bold text-2xl text-neo-blue mb-2">🤝 거절은 나를 향한 것이 아닙니다</h3>
-                                    <p className="text-lg mb-3">오늘의 거절은 '나'에 대한 거절이 아니라 <span className="font-bold underline decoration-neo-pink decoration-4">단지 '오늘의 제안'에 대한 거절일 뿐</span>입니다.</p>
-                                    <div className="bg-zinc-100 p-4 border-l-4 border-neo-blue">
-                                        <p className="font-bold text-neo-pink">💡 예시 상황</p>
-                                        <p>상대방이 "나 화장품 안 필요해"라고 거절하더라도 상처받지 마세요. 좋은 관계를 맺어두면 나중에 치약이 떨어졌을 때, 혹은 다른 지인을 소개해 줄 때 나를 가장 먼저 떠올리게 됩니다.</p>
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-neo-blue mb-2">👑 권위의 법칙</h4>
+                                    <p className="text-base sm:text-lg mb-3">믿을 만한 전문가의 말은 잘 믿게 됩니다.</p>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-neo-blue">
+                                        <p className="font-bold text-neo-pink">👉 애터미 실전 적용</p>
+                                        <p className="text-sm sm:text-base mt-1">한국원자력연구원과 콜마BNH가 만든 기술, 해모힘의 임상 결과를 공유하세요. 본인 스스로 깔끔한 옷차림으로 전문가처럼 보여야 합니다.</p>
                                     </div>
                                 </div>
 
-                                <div className="p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                    <h3 className="font-bold text-2xl text-neo-blue mb-2">🌱 함께 성장하는 든든한 전문가</h3>
-                                    <p className="text-lg mb-3">나는 고객에게 아쉬운 소리를 하는 것이 아니라, 고객의 삶을 긍정적으로 바꿔주는 <span className="font-bold underline decoration-neo-pink decoration-4">전문가(도우미)</span>입니다.</p>
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-neo-blue mb-2">🔗 일관성의 법칙</h4>
+                                    <p className="text-base sm:text-lg mb-3">작은 약속부터 지키면 큰 일도 하게 됩니다.</p>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-neo-blue">
+                                        <p className="font-bold text-neo-pink">👉 애터미 실전 적용</p>
+                                        <p className="text-sm sm:text-base mt-1">"제품 한번 써보시고 짧은 후기만 공유해주세요." 작은 참여가 쌓이다 보면 자연스럽게 사업 이야기도 듣게 됩니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Part 2 */}
+                            <h3 className="text-2xl sm:text-3xl font-black mt-8 bg-black text-white px-4 py-2 inline-block shadow-[4px_4px_0_#neo-yellow]">💡 행동경제학 4가지 기술</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mt-2">
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-red-600 mb-2">💸 손해 보는 게 더 아픈 마음 (손실 회피)</h4>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-red-600">
+                                        <p className="font-bold text-neo-pink">👉 이렇게 말해보세요</p>
+                                        <p className="text-sm sm:text-base mt-1 font-bold">"지금 이 제품으로 바꾸지 않으면 매달 5만 원씩 계속 손해 보는 셈입니다!"</p>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-neo-blue mb-2">⚓ 처음 가격이 기준! (기준점 효과)</h4>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-neo-blue">
+                                        <p className="font-bold text-neo-pink">👉 이렇게 말해보세요</p>
+                                        <p className="text-sm sm:text-base mt-1">"백화점 비슷한 스킨케어는 20~30만원 하죠?" 먼저 비싼 가격을 말한 뒤 애터미 절대가격을 말하면 극강의 가성비로 느껴집니다.</p>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-green-600 mb-2">🤔 선택지가 너무 많으면 포기합니다</h4>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-green-600">
+                                        <p className="font-bold text-neo-pink">👉 집중 추천 전략</p>
+                                        <p className="text-sm sm:text-base mt-1">100가지를 나열하지 말고 고객 상황에 맞춰 <span className="font-bold">해모힘, 화장품 등 2~3가지만 집중 추천</span>하여 피로를 줄여주세요.</p>
+                                    </div>
+                                </div>
+
+                                <div className="p-4 sm:p-6 border-4 bg-white shadow-[4px_4px_0_#000]">
+                                    <h4 className="font-bold text-xl sm:text-2xl text-purple-600 mb-2">🎢 절정과 마지막이 기억에 남습니다</h4>
+                                    <div className="bg-zinc-100 p-3 sm:p-4 border-l-4 border-purple-600">
+                                        <p className="font-bold text-neo-pink">👉 피크-앤드 법칙</p>
+                                        <p className="text-sm sm:text-base mt-1">강렬한 전/후 사진을 중간에 꼭 보여주고, 시연 끝에는 "함께 잘 살아보자"는 따뜻한 진심 어린 격려로 마무리하세요.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     )}
 
-                    {/* Step 2: Strategy (SPIN & Psychology) */}
+                    {/* Step 2: Success Stories & System */}
                     {step === 2 && (
                         <div className="flex flex-col gap-6 sm:gap-8 animate-fade-in overflow-y-auto max-h-[65vh] pb-8 pr-2 sm:pr-4">
-                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">2단계: 말하기 전략 익히기</div>
-                            <p className="text-base sm:text-xl text-zinc-700 dark:text-zinc-300 font-medium break-keep">영업 고수들이 무의식적으로 사용하는 질문의 기술과 심리적 무기 6가지를 배워보세요.</p>
+                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">2단계: 성공 리더들의 진짜 이야기 & 시스템 복제</div>
+                            <p className="text-base sm:text-xl text-zinc-700 dark:text-zinc-300 font-medium break-keep">가장 큰 울림을 주는 극복 스토리와, 누구나 따라 할 수 있는 성공 파이프라인(8 CORE)입니다.</p>
 
-                            <div className="bg-zinc-100 border-4 p-3 sm:p-5">
-                                <h2 className="text-xl sm:text-3xl font-black mb-2 sm:mb-4 bg-neo-yellow inline-block px-2 break-keep">세일즈 필수 4단계 공식 (SPIN 전략)</h2>
-                                <p className="mb-4 text-lg">고객이 스스로 문제와 이득을 깨닫도록 가이드를 제시하는 전략입니다.</p>
-
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div className="p-5 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                        <div className="inline-block bg-zinc-200 font-bold px-2 py-1 mb-2">1단계</div>
-                                        <h3 className="font-bold text-2xl">🤔 S (상황 파악 질문)</h3>
-                                        <p className="mt-2 text-md text-zinc-600">고객의 현재 일상, 패턴, 사용 중인 제품에 대해 자연스럽게 물어봅니다.</p>
-                                        <div className="mt-3 p-3 bg-blue-50 border-l-4 border-blue-400">
-                                            <p className="font-bold text-blue-800">🗣 예시 말하기</p>
-                                            <p className="italic">"선배님, 요즘 평소에 스킨이나 로션은 어떤 브랜드 주로 쓰세요?"</p>
-                                        </div>
+                            {/* Part 3 */}
+                            <h3 className="text-2xl sm:text-3xl font-black mt-4 bg-black text-white px-4 py-2 inline-block shadow-[4px_4px_0_#neo-yellow]">💡 실제 성공한 선배님들의 이야기</h3>
+                            <div className="flex flex-col gap-4 mt-2">
+                                <div className="p-4 sm:p-5 border-4 bg-white shadow-[4px_4px_0_#000] flex flex-col sm:flex-row gap-4 items-start">
+                                    <div className="bg-neo-blue text-white font-black text-2xl w-12 h-12 flex items-center justify-center shrink-0">1</div>
+                                    <div>
+                                        <h4 className="font-bold text-xl sm:text-2xl mb-2">이덕우 임페리얼마스터 <span className="text-neo-blue text-lg">"성공하지 못하면 기적이다"</span></h4>
+                                        <p className="text-zinc-700 text-sm sm:text-base leading-relaxed break-keep">
+                                            17년간 타 다단계에서 5번 실패해 신용불량자가 되고 비닐하우스에 살던 그는, 애터미를 만나 <span className="font-bold bg-yellow-100 px-1">가입비/유지비 없는 회사에 대한 엄청난 감사함</span>과 거절을 이겨내는 힘으로 임페리얼마스터가 되었습니다.
+                                        </p>
                                     </div>
+                                </div>
 
-                                    <div className="p-5 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                        <div className="inline-block bg-zinc-200 font-bold px-2 py-1 mb-2">2단계</div>
-                                        <h3 className="font-bold text-2xl">🚨 P (문제 인식 질문)</h3>
-                                        <p className="mt-2 text-md text-zinc-600">사용하면서 느꼈던 불편함이나 품질/가격 불만을 짚어줍니다.</p>
-                                        <div className="mt-3 p-3 bg-red-50 border-l-4 border-red-400">
-                                            <p className="font-bold text-red-800">🗣 예시 말하기</p>
-                                            <p className="italic">"그 브랜드 비싸던데... 혹시 쓰시면서 너무 건조하다거나 가성비가 떨어져서 아쉬웠던 적은 없으셨어요?"</p>
-                                        </div>
+                                <div className="p-4 sm:p-5 border-4 bg-white shadow-[4px_4px_0_#000] flex flex-col sm:flex-row gap-4 items-start">
+                                    <div className="bg-neo-pink text-black border-4 border-black font-black text-2xl w-12 h-12 flex items-center justify-center shrink-0">2</div>
+                                    <div>
+                                        <h4 className="font-bold text-xl sm:text-2xl mb-2">김연숙 임페리얼마스터 <span className="text-neo-pink text-lg">"철저한 제품 애용"</span></h4>
+                                        <p className="text-zinc-700 text-sm sm:text-base leading-relaxed break-keep">
+                                            IMF 때 30만 원짜리 월세방에서 쫓겨나던 시절, "그 얼굴로 화장품을 팔겠냐"는 핀잔에 충격을 받아 스스로 철저하게 화장품을 애용했습니다. <span className="font-bold bg-pink-100 px-1">피부가 눈에 띄게 좋아지자 제품은 저절로 퍼져나갔습니다.</span>
+                                        </p>
                                     </div>
+                                </div>
 
-                                    <div className="p-5 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                        <div className="inline-block bg-zinc-200 font-bold px-2 py-1 mb-2">3단계</div>
-                                        <h3 className="font-bold text-2xl text-neo-pink">⚠️ I (시사: 손해/공포 강조)</h3>
-                                        <p className="mt-2 text-md text-zinc-600">불만족을 그대로 방치할 경우 생기는 금전적, 심리적 손해를 일깨워줍니다.</p>
-                                        <div className="mt-3 p-3 bg-pink-50 border-l-4 border-neo-pink">
-                                            <p className="font-bold text-neo-pink">🗣 예시 말하기</p>
-                                            <p className="italic">"만약 그 건조한 걸 계속 방치하면 나중에 주름 잡배고 피부과 시술에 수십, 수백만 원 깨져요. 비싼 걸 쓰는데 오히려 손해보고 계신 거예요."</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="p-5 border-4 bg-white shadow-[4px_4px_0_#000]">
-                                        <div className="inline-block bg-zinc-200 font-bold px-2 py-1 mb-2">4단계</div>
-                                        <h3 className="font-bold text-2xl text-neo-blue">✅ N (해결책: 이득 제시)</h3>
-                                        <p className="mt-2 text-md text-zinc-600">내 제안(애터미)이 그 문제를 어떻게 완벽하게 해결해주는지 제시합니다.</p>
-                                        <div className="mt-3 p-3 bg-blue-50 border-l-4 border-neo-blue">
-                                            <p className="font-bold text-neo-blue">🗣 예시 말하기</p>
-                                            <p className="italic">"차라리 백화점 성분 그대로 들어갔는데 마트 가격인 애터미 앰플로 싹 바꿔보세요. 피부과 갈 돈 아끼면서 홈쇼핑 퀄리티 누릴 수 있어요!"</p>
-                                        </div>
+                                <div className="p-4 sm:p-5 border-4 bg-white shadow-[4px_4px_0_#000] flex flex-col sm:flex-row gap-4 items-start">
+                                    <div className="bg-neo-yellow text-black border-4 border-black font-black text-2xl w-12 h-12 flex items-center justify-center shrink-0">3</div>
+                                    <div>
+                                        <h4 className="font-bold text-xl sm:text-2xl mb-2">박정수 임페리얼마스터 <span className="text-yellow-600 text-lg">"장점만을 보는 리더십"</span></h4>
+                                        <p className="text-zinc-700 text-sm sm:text-base leading-relaxed break-keep">
+                                            최초의 임페리얼마스터인 그녀는 파트너십의 비결로 '장점 보기'를 꼽습니다. "애터미는 사람 관계 사업이다. <span className="font-bold bg-yellow-100 px-1">상대의 재능을 인정하면 조직이 폭발적으로 커진다</span>"며 시스템 합류를 강조합니다.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
 
-                            <div className="mt-2 sm:mt-4">
-                                <h2 className="text-xl sm:text-3xl font-black mb-2 sm:mb-4 bg-neo-yellow inline-block px-2 break-keep">설득의 심리학 6가지 무기</h2>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-                                    <div className="p-4 border-4 bg-white">
-                                        <h3 className="font-bold text-xl mb-1 mt-1">🎁 상호성의 법칙 (주면 받는다)</h3>
-                                        <p className="text-zinc-600 mb-2">사람은 호의를 받으면 보답하려 합니다.</p>
-                                        <p className="text-sm bg-zinc-100 p-2 italic">예: 샘플이나 사은품을 먼저 쥐어주며 체험하게 하기</p>
-                                    </div>
-                                    <div className="p-4 border-4 bg-white">
-                                        <h3 className="font-bold text-xl mb-1 mt-1">⏳ 희소성의 법칙 (한정된 것에 끌림)</h3>
-                                        <p className="text-zinc-600 mb-2">얼마 없을수록 가치있게 느낍니다.</p>
-                                        <p className="text-sm bg-zinc-100 p-2 italic">예: "이거 이번 달 프로모션에만 나오는 특별 세트예요."</p>
-                                    </div>
-                                    <div className="p-4 border-4 bg-white">
-                                        <h3 className="font-bold text-xl mb-1 mt-1">👀 사회 증명의 법칙 (다수의 선택)</h3>
-                                        <p className="text-zinc-600 mb-2">남들이 많이 하는 것을 안전하다고 느낍니다.</p>
-                                        <p className="text-sm bg-zinc-100 p-2 italic">예: "제 또래 엄마들은 거짓말 안 하고 이거 다 써요. 후기도 수백 개예요."</p>
-                                    </div>
-                                    <div className="p-4 border-4 bg-white">
-                                        <h3 className="font-bold text-xl mb-1 mt-1">👑 권위의 법칙 (전문가의 한 마디)</h3>
-                                        <p className="text-zinc-600 mb-2">지위, 권위자의 말에 복종하는 심리입니다.</p>
-                                        <p className="text-sm bg-zinc-100 p-2 italic">예: "이건 한국콜마 원자력연구원에서 10년 연구해서 특허받은 기술력이에요."</p>
-                                    </div>
-                                    <div className="p-4 border-4 bg-white">
-                                        <h3 className="font-bold text-xl mb-1 mt-1">❤️ 호감의 법칙 (공감대 형성)</h3>
-                                        <p className="text-zinc-600 mb-2">친근한 사람, 칭찬하는 사람의 부탁은 거절하기 힘듭니다.</p>
-                                        <p className="text-sm bg-zinc-100 p-2 italic">예: "머리 새로 하셨어요? 진짜 잘 어울리세요! (칭찬하며 마음 열기)"</p>
-                                    </div>
-                                    <div className="p-4 border-4 bg-white">
-                                        <h3 className="font-bold text-xl mb-1 mt-1">🔗 일관성의 법칙 (작은 약속부터)</h3>
-                                        <p className="text-zinc-600 mb-2">작은 승낙을 한 사람은 큰 제안도 쉽게 승낙합니다.</p>
-                                        <p className="text-sm bg-zinc-100 p-2 italic">예: 처음부터 수십만 원짜리 세트가 아니라 "딱 3천원짜리 치약 하나만 써보세요(미끼/로볼 상품)"로 시작하기</p>
-                                    </div>
-                                </div>
+                            {/* Part 4 & 5 */}
+                            <h3 className="text-2xl sm:text-3xl font-black mt-8 bg-black text-white px-4 py-2 inline-block shadow-[4px_4px_0_#neo-yellow]">💡 성공을 복제하는 8 CORE 행동 습관</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                                <ul className="list-disc pl-5 space-y-2 text-base sm:text-lg font-bold border-4 bg-zinc-50 p-4 sm:p-6 shadow-[4px_4px_0_#000]">
+                                    <li>📖 15분 성공 책 읽기</li>
+                                    <li>📺 성공 VOD 시청하기</li>
+                                    <li>🧑‍🤝‍🧑 미팅이나 세미나 참석</li>
+                                    <li>💄 제품 100% 직접 애용하기</li>
+                                </ul>
+                                <ul className="list-disc pl-5 space-y-2 text-base sm:text-lg font-bold border-4 bg-zinc-50 p-4 sm:p-6 shadow-[4px_4px_0_#000]">
+                                    <li>🗣️ 꾸준한 사업 설명(STP) 연습</li>
+                                    <li>🎁 매일 주변에 제품 전달하기</li>
+                                    <li>🤝 스폰서와 정기적 상담하기</li>
+                                    <li>😊 파트너와 신뢰(미소/칭찬) 쌓기</li>
+                                </ul>
                             </div>
 
                             <div className="bg-neo-pink border-4 p-4 sm:p-5 shadow-[4px_4px_0_#000] sm:shadow-[6px_6px_0_#000] text-base sm:text-xl font-bold leading-relaxed text-white break-keep mt-4">
-                                💡 실전 요약: 문제 제기(공포) → 해결책 제시(기대) → 증명(후기) → 앵커링(타사 대비 가성비) → 미끼 상품(쉬운 승낙) 순으로 실전에 적용해보세요!
+                                💡 2025 마케팅 트렌드: 고객 구매 주기에 맞춰 섬세하게 안부 문자를 주거나, "내가 직접 써보고 좋아진" 진정성 있는 1분 릴스(숏폼) 영상을 공유해보세요!
                             </div>
                         </div>
                     )}
