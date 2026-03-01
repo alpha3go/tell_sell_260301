@@ -11,8 +11,8 @@ import { useSpeechSynthesis } from "@/hooks/useSpeechSynthesis";
 export default function TrainingPage() {
     const [step, setStep] = useState(1);
 
-    const [relationship, setRelationship] = useState("stranger");
-    const [personality, setPersonality] = useState("normal");
+    const [scenario, setScenario] = useState("A");
+    const [persona, setPersona] = useState("1");
 
     const [interim, setInterim] = useState("");
     const { speak } = useSpeechSynthesis();
@@ -37,8 +37,8 @@ export default function TrainingPage() {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
-                    relationship,
-                    personality,
+                    scenario,
+                    persona,
                     messages: [
                         ...chatMessages.map(m => ({
                             role: m.sender === 'user' ? 'user' : 'assistant',
@@ -239,38 +239,59 @@ export default function TrainingPage() {
                         </div>
                     )}
 
-                    {/* Step 3: Persona Selection */}
+                    {/* Step 3: Scenario & Persona Selection */}
                     {step === 3 && (
-                        <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in">
-                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">3단계: 연습 상대방 설정하기</div>
-                            <p className="text-base sm:text-xl break-keep">오늘 상대해 볼 고객의 관계와 성격을 선택해주세요.</p>
+                        <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in overflow-y-auto max-h-[65vh] pb-8 pr-2 sm:pr-4">
+                            <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">3단계: 실전 시나리오 & 페르소나 설정</div>
+                            <p className="text-base sm:text-xl break-keep">실제 현장에서 가장 자주 만나는 8가지 고객 유형과 4가지 상황 중 하나를 선택하세요.</p>
 
                             <div className="flex flex-col gap-8 mt-2">
+                                {/* Scenarios */}
                                 <div>
-                                    <h3 className="text-2xl font-bold mb-4 bg-neo-yellow inline-block px-2 border-4 shadow-[4px_4px_0_#000]">1. 나와의 관계</h3>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <button onClick={() => setRelationship('stranger')} className={`p-6 border-4 text-left font-bold text-xl transition ${relationship === 'stranger' ? 'bg-neo-pink text-white -translate-y-1 shadow-[6px_6px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[4px_4px_0_#000]'}`}>
-                                            🤝 처음 만나는 사람
-                                            <p className={`font-normal text-lg mt-2 ${relationship === 'stranger' ? 'text-pink-100' : 'text-zinc-600'}`}>"어색하고 방어적입니다."</p>
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-4 bg-neo-yellow inline-block px-2 border-4 shadow-[4px_4px_0_#000]">🎯 실전 훈련 시나리오 (4가지)</h3>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                        <button onClick={() => setScenario('A')} className={`p-4 border-4 text-left font-bold transition ${scenario === 'A' ? 'bg-neo-pink text-white -translate-y-1 shadow-[4px_4px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[3px_3px_0_#000]'}`}>
+                                            <span className="text-lg">A. 안부 인사 및 초대 (콜드/웜)</span>
+                                            <p className={`font-normal text-sm mt-1 ${scenario === 'A' ? 'text-pink-100' : 'text-zinc-600'}`}>부담 없이 궁금증 유발 & 세미나/초대 연결</p>
                                         </button>
-                                        <button onClick={() => setRelationship('acquaintance')} className={`p-6 border-4 text-left font-bold text-xl transition ${relationship === 'acquaintance' ? 'bg-neo-pink text-white -translate-y-1 shadow-[6px_6px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[4px_4px_0_#000]'}`}>
-                                            👋 알고 지내던 지인
-                                            <p className={`font-normal text-lg mt-2 ${relationship === 'acquaintance' ? 'text-pink-100' : 'text-zinc-600'}`}>"친근하지만 영업은 거절합니다."</p>
+                                        <button onClick={() => setScenario('B')} className={`p-4 border-4 text-left font-bold transition ${scenario === 'B' ? 'bg-neo-blue text-white -translate-y-1 shadow-[4px_4px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[3px_3px_0_#000]'}`}>
+                                            <span className="text-lg">B. 제품 판매 (STP-Product)</span>
+                                            <p className={`font-normal text-sm mt-1 ${scenario === 'B' ? 'text-blue-100' : 'text-zinc-600'}`}>기능 나열이 아닌 '삶의 혜택' 중심으로 추천</p>
+                                        </button>
+                                        <button onClick={() => setScenario('C')} className={`p-4 border-4 text-left font-bold transition ${scenario === 'C' ? 'bg-neo-green text-black -translate-y-1 shadow-[4px_4px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[3px_3px_0_#000]'}`}>
+                                            <span className="text-lg">C. 보상 플랜 비전 제시 (STP-Plan)</span>
+                                            <p className={`font-normal text-sm mt-1 ${scenario === 'C' ? 'text-zinc-800' : 'text-zinc-600'}`}>비즈니스 소득(파이프라인)과 시스템 비전 전달</p>
+                                        </button>
+                                        <button onClick={() => setScenario('D')} className={`p-4 border-4 text-left font-bold transition ${scenario === 'D' ? 'bg-neo-yellow text-black -translate-y-1 shadow-[4px_4px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[3px_3px_0_#000]'}`}>
+                                            <span className="text-lg">D. 클로징 및 거절 처리</span>
+                                            <p className={`font-normal text-sm mt-1 ${scenario === 'D' ? 'text-zinc-800' : 'text-zinc-600'}`}>"생각해볼게요" 거절의 진짜 이유 듣고 확신 주기</p>
                                         </button>
                                     </div>
                                 </div>
 
+                                {/* Personas */}
                                 <div>
-                                    <h3 className="text-2xl font-bold mb-4 bg-neo-yellow inline-block px-2 border-4 shadow-[4px_4px_0_#000]">2. 고객의 성격</h3>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                        <button onClick={() => setPersonality('normal')} className={`p-6 border-4 text-left font-bold text-xl transition ${personality === 'normal' ? 'bg-neo-blue text-white -translate-y-1 shadow-[6px_6px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[4px_4px_0_#000]'}`}>
-                                            🙂 평범하고 친절한 성격
-                                            <p className={`font-normal text-lg mt-2 ${personality === 'normal' ? 'text-blue-100' : 'text-zinc-600'}`}>"이야기는 잘 들어줍니다."</p>
-                                        </button>
-                                        <button onClick={() => setPersonality('skeptical')} className={`p-6 border-4 text-left font-bold text-xl transition ${personality === 'skeptical' ? 'bg-neo-blue text-white -translate-y-1 shadow-[6px_6px_0_#000]' : 'bg-white hover:bg-zinc-100 text-black shadow-[4px_4px_0_#000]'}`}>
-                                            🧐 예민하고 까탈스러운 평
-                                            <p className={`font-normal text-lg mt-2 ${personality === 'skeptical' ? 'text-blue-100' : 'text-zinc-600'}`}>"의심이 많고 꼬치꼬치 묻습니다."</p>
-                                        </button>
+                                    <h3 className="text-xl sm:text-2xl font-bold mb-4 bg-neo-yellow inline-block px-2 border-4 shadow-[4px_4px_0_#000]">👥 네트워크 마케팅 8대 상대방 유형</h3>
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                                        {[
+                                            { id: '1', title: "보상플랜 분석가형", desc: "수익구조/성분 꼬치꼬치 캐묻는 깐깐한 타잎", color: "bg-black text-white" },
+                                            { id: '2', title: "다단계 편견/회의형", desc: "'민폐 끼치는 거 싫어요' 방어적이고 냉소적임", color: "bg-neo-pink text-white" },
+                                            { id: '3', title: "우유부단/자신감부족형", desc: "'좋은 건 알겠는데 제가 영업 체질이 아니라서'", color: "bg-neo-blue text-white" },
+                                            { id: '4', title: "과거 실패 상처형", desc: "예전에 타사에서 재고 떠안은 실패 경험 있음", color: "bg-orange-500 text-white" },
+                                            { id: '5', title: "매니아 소비자형", desc: "'저는 폰팔이 안해요, 그냥 제품만 쓸게요'", color: "bg-green-600 text-white" },
+                                            { id: '6', title: "꿈이 큰 야심형 (2030)", desc: "'빨리 경제적 자유!' 차/집/여행에 관심 많은 MZ", color: "bg-neo-yellow text-black" },
+                                            { id: '7', title: "예산 민감 현실주의자", desc: "'초기 비용 없나요? 리스크 있는 거 아니죠?'", color: "bg-zinc-600 text-white" },
+                                            { id: '8', title: "게이트키퍼 (배우자/절친)", desc: "'너 또 이상한 거 하냐?' '남편한테 허락받을게'", color: "bg-purple-600 text-white" },
+                                        ].map((p) => (
+                                            <button
+                                                key={p.id}
+                                                onClick={() => setPersona(p.id)}
+                                                className={`p-4 border-4 text-left font-bold transition flex flex-col justify-between h-full ${persona === p.id ? `${p.color} -translate-y-1 shadow-[4px_4px_0_#000]` : 'bg-white hover:bg-zinc-100 text-black shadow-[3px_3px_0_#000]'}`}
+                                            >
+                                                <span className="text-base sm:text-lg">{p.id}. {p.title}</span>
+                                                <p className={`font-normal text-sm mt-2 opacity-90`}>{p.desc}</p>
+                                            </button>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
@@ -300,7 +321,7 @@ export default function TrainingPage() {
                         <div className="flex flex-col gap-4 sm:gap-6 animate-fade-in h-full">
                             <div className="bg-neo-blue text-white px-3 py-1 sm:px-4 sm:py-2 border-4 text-lg sm:text-2xl font-bold w-max shadow-[3px_3px_0_#000] sm:shadow-[4px_4px_0_#000]">5단계: 훈련 피드백</div>
                             <p className="text-base sm:text-xl break-keep">수고하셨습니다! 방금 진행한 대화에 대한 피드백입니다.</p>
-                            <FeedbackPanel />
+                            <FeedbackPanel chatMessages={chatMessages} />
                         </div>
                     )}
                 </div>
